@@ -20,9 +20,10 @@ target_include_directories( engine
 	src/shader/include
 	src/input/include
 	src/events/include
-	src/core/include
 	src/camera/include
 	src/ui/include
+	src/core/app/include
+	src/core/engine/include
 )
 
 target_link_libraries( zengine 

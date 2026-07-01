@@ -2,6 +2,19 @@
 #include <GLFW/glfw3.h>
 #include <string>
 
+enum class EventType{
+    WINDOW_RESIZE,
+    WINDOW_MOVED,
+    WINDOW_FOCUS,
+    WINDOW_MINIMIZED,
+    KEY_PRESED
+};
+
+class WindowEvent{
+    public:
+        EventType getType() const;
+};
+
 class Window{
     private:
         GLFWwindow* window;
@@ -13,5 +26,6 @@ class Window{
        ~Window();
        void open();
        void close();
-       auto handEvent();
+       void swapBuffer();
+       auto pollEvents();
 };

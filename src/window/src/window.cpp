@@ -13,9 +13,19 @@ Window::Window(unsigned int width, unsigned int height, const std::string &tital
 }
 
 Window::~Window(){
-    glfwTerminate();
+    if (window)
+        glfwDestroyWindow(this->window);
 }
 
 void Window::open(){
+    glfwMakeContextCurrent(this->window);
+}
 
+
+void Window::close(){
+    glfwSetWindowShouldClose(this->window, true);
+}
+
+void Window::swapBuffer(){
+    glfwSwapBuffers(this->window);
 }
